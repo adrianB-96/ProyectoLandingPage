@@ -1,11 +1,21 @@
-import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
+import BackButton from '@/assets/SvgIcons/Contact/BackButton.svg';
+import style from '@/style/contact/Hero.module.css';
+import { getTranslations } from "next-intl/server";
 
 export default async function Hero() {
-  const t = await getTranslations('Hero');
+  const t = await getTranslations('HeroContact');
+  const tH = await getTranslations('HeaderContact');
   return (
-    <div className="flex items-center justify-center w-full pt-20 sm:p-10 md:p-20 lg:p-40">
-      <div className="flex flex-col w-full max-w-[63rem] min-h-[10rem] md:h-auto justify-center flex-shrink-0 text-center px-4">
-        <h1 className="font-semibold leading-tight md:leading-[3.5rem] text-3xl sm:text-4xl md:text-5xl lg:text-[3rem]" style={{fontFeatureSettings: '"liga" off, "clig" off', color: 'var(--Neutral-00, #FFF)' }}>{t("title")}</h1>
+    <div className={style.DivHero}>
+      <a href='/' className={style.LinkBackButton}>
+            <Image src={BackButton} alt='BackButton' className="size-6 relative overflow-hidden"></Image>
+          <div className={style.BackButtonText}>
+            <p>{tH("backPage")}</p>
+          </div>
+      </a>
+      <div className={style.DivTitulo}>
+        <h1 className={style.Titulo}>{t("title")}</h1> 
       </div>
     </div>
   )

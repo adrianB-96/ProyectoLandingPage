@@ -1,12 +1,8 @@
 'use client';
+import styles from '@/style/contact/Header.module.css';
 import { useEffect, useState } from 'react';
-import styles from '../style/Buttons.module.css';
-import Image from 'next/image';
-import Logo from '@/assets/mainImage/LogoSafireServices.svg';
-import { getTranslations } from 'next-intl/server';
 
 export default function Header() {
-    //const t = await getTranslations('Header');
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,19 +20,17 @@ export default function Header() {
         <header className={`text-white py-4 fixed top-0 z-50 w-full transition-all duration-500 active:scale-98 ${
             (scrolled || mobileMenuOpen) ? "bg-zinc-700 shadow-lg" : ""
         }`}>
-            <div className={"container mx-auto px-auto flex justify-center gap-40 sm:gap-122 items-center flex-shrink-0"}>
-                <div className="flex items-center justify-start gap-1 sm:gap-2.5 px-2 sm:px-3">
-                    <Image src={Logo} alt='Logo'></Image>
-                </div>
-                <nav className="hidden sm:flex gap-6 text-sm">
-                    <li className={styles.liInicioSesionButton}>
-                        <a href="https://127.0.0.1/Login">Iniciar sesión</a>
-                    </li>
-                    <a href="./es/contact" className={styles.liContactarButton}>
-                        <li className={styles.ContactarButton}>Contactar</li>
+            <div className={styles.HeaderDiv}>
+                <ul>
+                    <li className={styles.Logo}></li>
+                </ul>
+                <nav className='hidden sm:flex gap-6 text-sm'>
+                    <a href="https://safire.services/">
+                        <li className={styles.InicioSesionButton}>
+                            <p>Iniciar sesion</p>
+                        </li>
                     </a>
                 </nav>
-
                 <button
                     className="sm:hidden p-2"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -49,10 +43,7 @@ export default function Header() {
 
             {mobileMenuOpen && (
                 <div className="sm:hidden absolute top-full left-0 w-full bg-zinc-700 shadow-lg flex flex-col p-4 gap-4">
-                    <a href="https://127.0.0.1:" className={styles.liInicioSesionButton}>Iniciar sesión</a>
-                    <div className={styles.liContactarButton}>
-                        <a href="./es/contact" className={styles.ContactarButton}>Contactar</a>
-                    </div> 
+                    <a href="https://safire.services/" className={styles.InicioSesionButton}>Iniciar sesión</a>
                 </div>
             )}
         </header>
