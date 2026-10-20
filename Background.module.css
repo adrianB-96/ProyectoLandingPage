@@ -1,0 +1,24 @@
+.FondoFormularioDeContacto {
+  background: linear-gradient(180deg,#333333,#70040f);
+  background-size: 120% 120%;
+  animation: gradient-animation 8s ease infinite;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  padding-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

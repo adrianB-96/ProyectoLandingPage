@@ -1,0 +1,41 @@
+.Logo {
+    width: 12.5rem;
+    height: 2.59988rem;
+    flex-shrink: 0;
+    background-image: url('@/assets/mainImage/LogoSafireServices.svg');
+}
+
+.InicioSesionButton {
+    border-radius: var(--Radius-large, 24px);
+    padding: var(--Padding-medium, 12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.InicioSesionButton:hover {
+    border-color: transparent;
+    color: #D33E4C;
+}
+
+.HeaderDiv{
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 10rem;
+}
+
+@media (min-width: 640px) {
+    .HeaderDiv {
+        gap: 55rem;
+    }
+}
